@@ -38,9 +38,12 @@ const Cart = () => {
     router.push("/checkout"); // Navigate to checkout page
   };
 
+  // Calculate cart count for Navbar
+  const cartCount = cartItems.length;
+
   return (
     <div>
-      <Navbar />
+      <Navbar cartCount={cartCount} /> {/* Pass cartCount to Navbar */}
       <h1>Your Cart</h1>
       {cartItems.length > 0 ? (
         cartItems.map((item) => (

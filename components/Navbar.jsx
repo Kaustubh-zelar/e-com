@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/router";
+import { cartCount } from "../pages/index";
 
 const Navbar = () => {
   const router = useRouter();
@@ -20,7 +21,7 @@ const Navbar = () => {
               href="/cart"
               className={router.pathname === "/cart" ? "active" : ""}
             >
-              Cart
+              Cart{cartCount > 0 && `(${cartCount})`}
             </Link>
           </li>
           <li>

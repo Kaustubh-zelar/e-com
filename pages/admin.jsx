@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import { db } from "./api/firebase"; // Ensure this path is correct
 import Navbar from "../components/Navbar";
@@ -131,9 +132,7 @@ const Admin = () => {
               <span className="admin-product-price">
                 ${product.price.toFixed(2)}
               </span>
-              <span className="admin-product-description">
-                {product.description}
-              </span>
+
               <button
                 onClick={() => handleDeleteProduct(product.id)}
                 className="admin-button"
